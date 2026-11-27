@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Reveal from "@/components/reveal";
 
+export const instant = false;
+
 const galleries: Record<
   string,
   {
@@ -190,7 +192,10 @@ export default async function IndustryDetailPage({
   if (!industry) {
     return (
       <main className="min-h-screen bg-[#F7F4EE] px-6 py-32 text-center">
-        <h1 className="font-serif text-4xl">Industry not found.</h1>
+        <h1 className="font-serif text-4xl">
+          Industry not found.
+        </h1>
+
         <Link
           href="/industries"
           className="mt-8 inline-block border-b border-[#9C7A4F] pb-2"
@@ -209,7 +214,8 @@ export default async function IndustryDetailPage({
             href="/industries"
             className="mb-12 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-[#9C7A4F]"
           >
-            <ArrowLeft size={15} /> All Industries
+            <ArrowLeft size={15} />
+            All Industries
           </Link>
 
           <Reveal>
@@ -292,7 +298,8 @@ export default async function IndustryDetailPage({
             href="/contact"
             className="mt-9 inline-flex items-center gap-3 bg-[#E8E1D4] px-8 py-4 text-xs uppercase tracking-widest text-[#25262A] transition hover:bg-[#9C7A4F] hover:text-white"
           >
-            Discuss Your Project <ArrowRight size={16} />
+            Discuss Your Project
+            <ArrowRight size={16} />
           </Link>
         </Reveal>
       </section>
